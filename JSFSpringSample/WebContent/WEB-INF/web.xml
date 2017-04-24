@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name>JSFSpringSample</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	<context-param>
+		<description>            Comma separated list of URIs of (additional) faces config files.            (e.g. /WEB-INF/my-config.xml)            See JSF 1.0 PRD2, 10.3.2</description>
+		<param-name>javax.faces.CONFIG_FILES</param-name>
+		<param-value>/WEB-INF/component.xml, /WEB-INF/navigation.xml, /WEB-INF/beans.xml</param-value>
+	</context-param>
+	<context-param>
+		<description>            State saving method: "client" or "server" (= default)            See JSF Specification 2.5.2</description>
+		<param-name>javax.faces.STATE_SAVING_METHOD</param-name>
+		<param-value>server</param-value>
+	</context-param>
+	<context-param>
+		<param-name> primefaces.PUBLIC_CAPTCHA_KEY</param-name>
+		<param-value>6LdXYhwUAAAAAHu1SJ4FKwxkdZmx-plJRkcrDNh9</param-value>
+	</context-param>
+	<context-param>
+		<param-name>primefaces.PRIVATE_CAPTCHA_KEY</param-name>
+		<param-value>6LdXYhwUAAAAABfOw3Vqpdtr7nQlt6wQM2xbtOvt</param-value>
+	</context-param>
+	  
+	<servlet>
+		<servlet-name>JSFFaces</servlet-name>
+		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>JSFFaces</servlet-name>
+		<url-pattern>*.jsf</url-pattern>
+	</servlet-mapping>
+	<listener>
+      <listener-class>
+         org.springframework.web.context.ContextLoaderListener
+      </listener-class>
+   </listener>
+   
+   <listener>
+      <listener-class>
+         org.springframework.web.context.request.RequestContextListener
+      </listener-class>
+   </listener>
+	
+</web-app>

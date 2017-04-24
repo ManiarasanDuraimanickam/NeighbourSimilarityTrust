@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="uTF-8"?>
+<!DOCTYPE faces-config PUBLIC "JavaServer Config" "http://java.sun.com/dtd/web-facesconfig_1_0.dtd">
+<faces-config>
+	<application>
+	
+	</application>
+	<managed-bean>
+		<managed-bean-name>schoolController</managed-bean-name>
+		<managed-bean-class>com.nationstar.spring.controller.SchoolController</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>studentDAO</property-name>
+			<value>#{studentDAO}</value>
+		</managed-property>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>student</managed-bean-name>
+		<managed-bean-class>com.nationstar.spring.model.Student</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+</faces-config>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<script>
+		function confirmFunction() {
+			if (!confirm("Are you sure you want to login?"))
+				return false;
+			return true;
+		}
+	</script>
+	<!-- <script src='https://www.google.com/recaptcha/api.js'></script> -->
+</h:head>
+<h:form>
+	<h1>
+		<h:outputText value="JavaBeat JSF 2.2 Examples" />
+
+	</h1>
+	
+	<table>
+		<tr>
+			<td>Enter Your Username :</td>
+			<td><h:inputText id="username"
+					value="#{schoolController.username}" /></td>
+		</tr>
+		<tr>
+			<td>Enter Your Password :</td>
+			<td><h:inputSecret value="#{schoolController.password}" /></td>
+		</tr>
+		<tr>
+			<td colspan="2"><h:commandLink
+					onclick="return confirmFunction();" value="Login"
+					action="#{schoolController.getAuthorize()}" /></td>
+		</tr>
+	</table>
+	<br />
+</h:form>
+</html>
